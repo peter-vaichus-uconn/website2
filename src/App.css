@@ -1,0 +1,16 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --bar-width: 60px;
+    --bar-height: 5px;
+    --ham-gap: 7px;
+    --foreground: black;
+    --background: white;
+    --animation-timing: 200ms ease-in-out;
+  }
+
+.container{
+    color: red;
+}
