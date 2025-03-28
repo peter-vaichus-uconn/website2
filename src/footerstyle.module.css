@@ -1,0 +1,29 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+body{
+    margin: 0;
+}
+
+nav{
+    width: 100%;
+    position: fixed;
+    background-color: #339;
+    color: blue;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    /* gap: 2rem;
+    padding: 1rem 1rem; */
+    height: var(--nav-height);
+    transition: 500ms;
+    border-style: solid;
+    border-color: red;
+    border-width: 2px; 
+    bottom: 0px;
+}

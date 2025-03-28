@@ -1,7 +1,9 @@
-export default function Navbar(){
+import styles from "./navstyle.module.css"
+
+export default function Navbar({NavHeight}){
     return (
     <>
-    <nav className = "nav font-bold text-2xl">
+    <nav className = {(NavHeight == 100 ? "nav font-bold text-5xl" : "nav font-bold text-2xl")} style={{ "--nav-height": `${NavHeight}px` }}>
         <a href = "/" className = "home">Peter Vaichus</a>
         <ul>
             <li >
@@ -16,7 +18,11 @@ export default function Navbar(){
             <li>
                 <a href ="/contact">Contact</a>
             </li>
-
+            {/* <li>
+                <label class="hamburger-menu">
+                    <input type="checkbox"></input>
+                </label>
+            </li> */}
         </ul>
     </nav>
     </>

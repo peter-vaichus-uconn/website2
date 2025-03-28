@@ -1,0 +1,128 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+body{
+    margin: 0;
+}
+
+:root {
+    --nav-height: 50px;
+
+    /* hamburger variables */
+    --ham-bar-height: 8px;
+    --ham-bar-width: 60px;
+    --ham-gap: 6px;
+    --foreground: #333;
+    --background: white;
+    --animation-timing: 200ms ease-in-out;
+}
+
+
+.hamburger-menu{
+    height: calc(3 * var(--ham-bar-height) + 2 * var(--ham-gap));
+
+    display: flex;
+    flex-direction: column;
+    background: whitesmoke;
+    justify-content: center;
+    align-items: center;   
+
+}
+
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input{
+    content: "";
+    width: var(--ham-bar-width);
+    height: var(--ham-bar-height);
+    background-color: var(--foreground);
+    padding: 0;
+    margin: 4px;
+    background: #333;
+    transform-origin: left center;
+    transition: opacity var(--animation-timing), width var(--animation-timing);
+}
+
+.hamburger-menu input{
+    appearance: none;
+    padding: 0;
+    margin: 4px;
+    outline: none;
+    pointer-events: none;
+}
+
+.hamburger-menu:has(input:checked)::before{
+    rotate: 45deg;
+    width: 45px;
+}
+
+.hamburger-menu:has(input:checked)::after{
+    rotate: -45deg;
+    width: 45px;
+}
+
+.hamburger-menu input:checked{
+    opacity: 0;
+    width: 0;
+}
+
+.nav{
+    width: 100%;
+    position: fixed;
+    background-color: #339;
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 2rem;
+    padding: 1rem 1rem;
+    height: var(--nav-height);
+    transition: 500ms;
+}
+
+.nav a{
+    color: inherit;
+    text-decoration: none;
+    height:100%;
+    display:flex;
+    align-items: center;
+    padding: .25rem;
+
+}
+
+.nav ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    /* border-style: solid;
+    border-color: red;
+    border-width: 2px;  */
+    position: relative;
+}
+
+.nav li.active{
+    background-color: #555;
+}
+
+.nav li:hover{
+    background-color: #777;
+}
+
+
+
+.nav label{
+    color: inherit;
+    text-decoration: none;
+    height:100%;
+    display:flex;
+    align-items: center;
+    padding: .25rem;
+
+}

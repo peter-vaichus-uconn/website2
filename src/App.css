@@ -12,5 +12,11 @@
   }
 
 .container{
-    color: red;
+    position: fixed;
+    border-radius: 2px;
+    border-style: solid;
+    border-color: red;
+    border-width: 2px; 
+    top: 500px;
+    width: 100%;
 }
